@@ -1,28 +1,33 @@
 Pleb.ca Shared Cooperation Via Secure Communication.
-Initiative from tactiq.net of releasing this projest as opensource for it to suck as less as possible.
+Initiative from tactiq.net of releasing this projest as opensource for it to suck less.
 
 Message Requirements  
 	1.Communication Content 
-		Array(0="string",1="string",2="string",4="string")
+		Array(0="string",1="string",2="string",4="string");
 
 Encryption Requirements  
-	1.Communication Content 
- 	2.Shared Secret Phrase 
-	3.Server side Salt
+		1.Communication Content 
+		2.IV
+ 	3.Shared Secret Phrase 
+	4.Server side Salt
+
 
 Decryption Requirements  
-	1.IV
- 	2.Shared Secret Phrase
-	3.Server side Salt	
-	4.encrypted Coop 
+		1.IV	
+		2.Encrypted cooperation 
+ 	3.Shared Secret Phrase
+	4.Server side Salt
+	
 		
 POST values
-v1='server salt' String
-v2='Secret phrase' String
-v3='base64_encoded(json(Array))' String
+V1 = $_POST['V1'] = 'Flow' as 'e' or 'd' // E ncryption D ecryption
+V2 = $_POST['V2'] = 'Secret phrase' as String
+V3 = $_POST['V3'] = 'message' as String
+V4 = $_POST['V4'] = 'destination' String
 
 
-In -> v1=Salt v2=Secret v3=base64_encoded (json(Array));
+
+In -> Flow, Secret, Message, Destination.
 
 
 Out -> base64_encoded( json array('iv' => 'IV key', 'Enc' => 'Communication Content'))
