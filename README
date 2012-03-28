@@ -14,7 +14,7 @@ Decryption Requirements
 	1.IV
  	2.Shared Secret Phrase
 	3.Server side Salt	
-	4.encrypted Coop
+	4.encrypted Coop 
 		
 POST values
 v1='server salt' String
@@ -25,4 +25,4 @@ v3='base64_encoded(json(Array))' String
 In -> v1=Salt v2=Secret v3=base64_encoded (json(Array));
 
 
-Out -> base64_encoded( json array('iv' => 'IV key', 'Enc' => 'IV key'))
+Out -> base64_encoded( json array('iv' => 'IV key', 'Enc' => 'Communication Content'))
